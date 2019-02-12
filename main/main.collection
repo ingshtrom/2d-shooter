@@ -79,7 +79,7 @@ embedded_instances {
   id: "player"
   data: "components {\n"
   "  id: \"player\"\n"
-  "  component: \"/main/player.script\"\n"
+  "  component: \"/main/player/player_controller.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

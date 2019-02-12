@@ -1,0 +1,2 @@
+prototype: "/main/weapons/weapon_1/weapon_1_bullet.go"
+load_dynamically: false

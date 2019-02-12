@@ -31,7 +31,9 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash('up') then
+	if action_id == hash("click") and action.pressed then
+		factory.create('/', [position], [rotation], [properties], [scale])
+	elseif action_id == hash('up') then
 		self.input.y = 1
 	elseif action_id == hash('down') then
 		self.input.y = -1

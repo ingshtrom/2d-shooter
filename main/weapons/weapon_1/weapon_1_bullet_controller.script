@@ -1,0 +1,13 @@
+local MOVEMENT_SPEED = 300
+
+go.property("dir", vmath.vector3())
+
+function init(self)
+	-- make sure our direction is always normalized
+	self.dir = vmath.normalize(self.dir)
+end
+
+function update(self, dt)
+	local pos = go.get_position()
+	go.set_position(pos + (dir * MOVEMENT_SPEED * dt))
+end
