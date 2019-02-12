@@ -1,0 +1,28 @@
+local MOVEMENT_SPEED = 50
+local tmp_vector = vmath.vector3()
+
+function init(self)
+end
+
+function final(self)
+end
+
+function update(self, dt)
+	local player_pos = go.get_position("main:/player")
+	local pos = go.get_position()
+
+	tmp_vector.x = player_pos.x - pos.x
+	tmp_vector.y = player_pos.y - pos.y
+	local dir = vmath.normalize(tmp_vector)
+
+	go.set_position(pos + (dir * MOVEMENT_SPEED * dt))
+end
+
+function on_message(self, message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+end
+
+function on_reload(self)
+end

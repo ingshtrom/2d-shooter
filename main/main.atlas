@@ -1,0 +1,18 @@
+images {
+  image: "/assets/images/background.png"
+}
+images {
+  image: "/assets/images/logo.png"
+}
+images {
+  image: "/builtins/graphics/particle_blob.png"
+}
+images {
+  image: "/assets/images/yello_triangle.png"
+}
+images {
+  image: "/assets/images/red_square_black_border.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0
