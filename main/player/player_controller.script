@@ -1,3 +1,5 @@
+local rendercam = require "rendercam.rendercam"
+
 local MOVEMENT_SPEED = 150
 
 go.property("input", vmath.vector3(0, 0, 0))
@@ -5,6 +7,7 @@ go.property("is_paused", false)
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
+	msg.post(".", "camera_init")
 end
 
 function final(self)
@@ -12,27 +15,28 @@ function final(self)
 end
 
 function update(self, dt)
-  if self.is_paused == false then
-  	local pos = go.get_position()
-	local input = self.input
-	if vmath.length_sqr(self.input) > 1 then
-		input = vmath.normalize(self.input)
+	if self.is_paused == false then
+		local pos = go.get_position()
+		local input = self.input
+		if vmath.length_sqr(self.input) > 1 then
+			input = vmath.normalize(self.input)
+		end
+		go.set_position(pos + (input * MOVEMENT_SPEED * dt))
 	end
-	go.set_position(pos + (input * MOVEMENT_SPEED * dt))
-  end
 
 	self.input.x = 0
 	self.input.y = 0
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+	if message_id == hash("camera_init") then
+		rendercam.follow(go.get_id())
+	end
 end
 
 function on_input(self, action_id, action)
 	if action_id == hash("click") and action.pressed then
-		factory.create('/', [position], [rotation], [properties], [scale])
+		factory.create('/bullets#weapon_1_bullet', go.get_position(), nil, nil, 0.5)
 	elseif action_id == hash('up') then
 		self.input.y = 1
 	elseif action_id == hash('down') then
@@ -43,7 +47,8 @@ function on_input(self, action_id, action)
 		self.input.x = -1
 	elseif action_id == nil then
 		local pos = go.get_position()
-		local rad = math.atan2(action.y - pos.y, action.x - pos.x)
+		local mouse_pos = rendercam.screen_to_world_2d(action.x, action.y)
+		local rad = math.atan2(mouse_pos.y - pos.y, mouse_pos.x - pos.x)
 		local rot = vmath.quat_rotation_z(rad)
 		go.set_rotation(rot)
 	end

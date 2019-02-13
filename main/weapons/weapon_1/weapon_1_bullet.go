@@ -1,3 +1,18 @@
+components {
+  id: "weapon_1_bullet_controller"
+  component: "/main/weapons/weapon_1/weapon_1_bullet_controller.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
   id: "sprite"
   type: "sprite"
