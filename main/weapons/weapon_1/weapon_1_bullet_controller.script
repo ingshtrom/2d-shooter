@@ -9,3 +9,9 @@ function update(self, dt)
 	local pos = go.get_position()
 	go.set_position(pos + (self.dir * MOVEMENT_SPEED * dt))
 end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then
+		go.delete()
+	end
+end
