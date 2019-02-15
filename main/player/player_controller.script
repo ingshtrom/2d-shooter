@@ -33,7 +33,6 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	print("player message received", message_id)
 	if message_id == hash("camera_init") then
 		rendercam.follow(go.get_id())
 	elseif message_id == hash("contact_point_response") then

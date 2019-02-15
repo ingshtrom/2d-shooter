@@ -43,6 +43,7 @@ embedded_components {
   "restitution: 0.0\n"
   "group: \"bullets\"\n"
   "mask: \"world\"\n"
+  "mask: \"enemies\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"

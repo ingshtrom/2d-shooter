@@ -26,5 +26,5 @@ app_icon = /assets/appicons/appicon.ico
 app_icon = /assets/appicons/appicon.icns
 
 [physics]
-debug = 1
+debug = 0
 

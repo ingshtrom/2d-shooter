@@ -19,6 +19,106 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "enemy_1"
+  prototype: "/main/enemies/enemy_1.go"
+  position {
+    x: -224.0
+    y: -115.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "enemy_11"
+  prototype: "/main/enemies/enemy_1.go"
+  position {
+    x: 924.0
+    y: 64.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "enemy_"
+  prototype: "/main/enemies/enemy_1.go"
+  position {
+    x: -132.0
+    y: -37.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "enemy_2"
+  prototype: "/main/enemies/enemy_1.go"
+  position {
+    x: -232.0
+    y: -9.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "enemy_3"
+  prototype: "/main/enemies/enemy_1.go"
+  position {
+    x: -195.0
+    y: 64.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "player"
@@ -106,7 +206,7 @@ embedded_instances {
   position {
     x: 309.0
     y: -25.0
-    z: 0.1
+    z: 0.0
   }
   rotation {
     x: 0.0
@@ -203,7 +303,7 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: -0.1
   }
   rotation {
     x: 0.0
